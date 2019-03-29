@@ -1,0 +1,11 @@
+<h1> <%= @location.name %>
+
+<h2> Address </h4>
+<%= @location.address %>
+
+<h2> Pictures </h4>
+<ul>
+  <% @location.images.includes(:blob).each do |image| %>
+    <li><%= image_tag image.variant(resize: '1024x768') %></li>
+  <% end %>
+</ul>
